@@ -1,0 +1,6 @@
+package org.webvibecourse.be.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public interface UserService extends UserDetailsService {
+}
