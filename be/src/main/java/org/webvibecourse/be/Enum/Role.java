@@ -22,6 +22,6 @@ public enum Role {
             if(role.getCode() == code)
                 return role;
         }
-        throw new IllegalArgumentException("Invalid Role Code" +code);
+        throw new IllegalArgumentException("Invalid Role Code" +code    );
     }
 }

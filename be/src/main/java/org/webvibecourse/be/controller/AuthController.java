@@ -38,9 +38,7 @@ public class AuthController {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getEmail(),
-                            request.getPassword()
-                    )
-                                                                              );
+                            request.getPassword()));
 
             if (!authentication.isAuthenticated()) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
@@ -58,14 +56,12 @@ public class AuthController {
             String accessToken = jwtService.generateAccessToken(
                     account.getEmail(),
                     account.getId(),
-                    role
-                                                               );
+                    role);
 
             String refreshToken = jwtService.generateRefreshToken(
                     account.getEmail(),
                     account.getId(),
-                    role
-                                                                 );
+                    role);
 
             long accessTokenExpiryAt = jwtService.getAccessExpiration();
             long refreshTokenExpiryAt = jwtService.getRefreshExpiration();
